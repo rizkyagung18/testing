@@ -10,9 +10,9 @@ const getMonth = (callback) => {
     }, 4000)
 }
 
-getMonth(async(err, res) => {
+getMonth((err, res) => {
     try {
-        const data = await res.map(item => {
+        const data = res.map(item => {
             return item
         })
 

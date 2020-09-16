@@ -4,16 +4,13 @@ function palindrome(teks) {
   }
 
   teks = teks.toLowerCase()
-  let balik = ""
-  for (let i = teks.length - 1; i >= 0; i--) {
-    balik += teks[i]
-  }
+  const balik = teks.split('').reverse().join('')
 
   if (teks === balik) {
     return "Palindrome"
   } else {
     return "Bukan Palindrome"
-    }
+  }
 }
   
 console.log(palindrome("Malam"))

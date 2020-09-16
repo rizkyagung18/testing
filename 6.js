@@ -3,34 +3,13 @@ const divideAndSort = num => {
         return
     }
     const convert = num.toString()
-    const arr = []
-    let temp = []
-    for (let i = 0; i < convert.length; i++) {
-        if(convert[i] == '0') {
-            arr.push(temp)
-            temp = []
-        } else {
-            temp.push(convert[i])
-            if(i == convert.length - 1) {
-                arr.push(temp)
-            }
-        }
-    }
+    const arr = convert.split('0')
 
-    const sorted = []
-    for(let i = 0; i < arr.length; i++) {
-        let sort = arr[i].sort()
+    const sorted = arr.map(item => {
+        return item.split('').sort().join('')
+    })
 
-        sorted.push(sort)
-    }
-
-    let hasil = ""
-
-    for (let i = 0; i < sorted.length; i++) {
-        for(let j = 0; j < sorted[i].length; j++) {
-            hasil += sorted[i][j]
-        }
-    }
+    const hasil = sorted.join('')
 
     return parseInt(hasil)
 }

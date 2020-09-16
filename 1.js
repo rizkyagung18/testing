@@ -14,13 +14,13 @@ const cekHariKerja = (day) => {
     })
 }
 
-cekHariKerja("kamis")
-  .then((res) => {
-    console.log(`Hari ${res} adalah hari kerja`)
-  })
-  .catch((err) => {
-    console.log(err.message)
-  })
+// cekHariKerja("sabtu")
+//   .then((res) => {
+//     console.log(`Hari ${res} adalah hari kerja`)
+//   })
+//   .catch((err) => {
+//     console.log(err.message)
+//   })
 
 (async(day) => {
   try {
@@ -29,7 +29,7 @@ cekHariKerja("kamis")
   } catch (err) {
     console.log(err.message)
   }
-})('kamis')
+})('senin')
 
 // Fungsi then dan catch
 // then berfungsi untuk melanjutkan proses pada promise apabila resolve berhasil didapatkan

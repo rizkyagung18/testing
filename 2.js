@@ -1,6 +1,6 @@
 const getMonth = (callback) => {
     setTimeout(() => {
-        let error = false;
+        let error = true;
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         if(!error) {
             callback(null, month)
@@ -10,9 +10,9 @@ const getMonth = (callback) => {
     }, 4000)
 }
 
-getMonth(async(err, res) => {
+getMonth((err, res) => {
     try {
-        const data = await res.map(item => {
+        const data = res.map(item => {
             return item
         })
 

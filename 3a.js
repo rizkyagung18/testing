@@ -1,19 +1,23 @@
-const jackpot = new Promise((resolve, reject) => {
-   setTimeout(() => {
-    const random = Math.random() * 10
-    const hadiah = ['sepatu', 'hoodie', 'macbook']
-    if(random > 7) {
-        resolve(hadiah)
-    } else {
-        reject(new Error("Unfortunately, no gift"))
-    }
-   }, 3000)
-})
+const jackpot = () => { 
+    return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const random = Math.random() * 10
+        const hadiah = ['sepatu', 'hoodie', 'macbook']
+        if(random > 7) {
+            resolve(hadiah)
+        } else {
+            reject(new Error("Unfortunately, no gift"))
+        }
+    }, 3000)
+  })
+}
 
-jackpot.then((hadiah) => {
+jackpot()
+ .then((hadiah) => {
     hadiah[hadiah.length-1] = "dan " + hadiah[hadiah.length-1]
     console.log(`Selamat anda mendapatkan hadiah berupa ${hadiah.join(", ")}`)
-}).catch((err) => {
+})
+ .catch((err) => {
     console.log(err.message)
 })
 
@@ -94,7 +98,7 @@ const faker = (url, opt) => {
     })
 }
 
-faker('/movies')
+faker('/movies', 'title')
  .then(data => {
      console.log('Congrats you got a data')
      console.log(data)
